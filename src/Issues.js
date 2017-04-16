@@ -186,7 +186,7 @@ class Issues extends React.Component {
             Incidents
           </h2>
         </a>
-        <div className="issues-list w-100">{issues.length > 0 && issues || <i className="fa fa-cog fa-spin fa-3x fa-inverse"></i>}</div>
+        <div className="issues-list w-100">{issues.length > 0 && issues}</div>
       </div>
     )
   }

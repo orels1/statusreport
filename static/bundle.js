@@ -33738,7 +33738,7 @@ var Issues = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'issues-list w-100' },
-          issues.length > 0 && issues || _react2.default.createElement('i', { className: 'fa fa-cog fa-spin fa-3x fa-inverse' })
+          issues.length > 0 && issues
         )
       );
     }
