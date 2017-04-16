@@ -1,4 +1,4 @@
-
+![statusreport](http://i.imgur.com/PiLxgO5.png)
 
 # StatusReport
 >A one-click deploy github-hosted statuspage
