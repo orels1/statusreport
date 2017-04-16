@@ -148,7 +148,7 @@ class Issues extends React.Component {
               </div>
               <div className="issue-date">{moment(issue.created_at).from(moment())}</div>
             </div>
-            || this.state.issues.length > 0 && labels.severity.length > 0 &&
+            || this.state.issues.length > 0 && labelsSeverity.length > 0 &&
             <div
               className="issue-badges d-flex flex-column w-100 justify-content-center align-items-center"
               style={{'background': labelsSeverity[0].color}}

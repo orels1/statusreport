@@ -33525,15 +33525,15 @@ var Issues = function (_React$Component) {
         for (var _iterator2 = issues[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
           var issue = _step2.value;
 
-          var _labels = (0, _underscore.map)(issue.labels, function (label) {
+          var labels = (0, _underscore.map)(issue.labels, function (label) {
             return label.name;
           });
           // check if we have any other labels except the service names
-          if ((0, _underscore.reject)(_labels, function (label) {
+          if ((0, _underscore.reject)(labels, function (label) {
             return _this3.props.services.includes(label);
           }).length > 0) {
             // if so - change status of those services
-            var affected = (0, _underscore.reject)(_labels, function (label) {
+            var affected = (0, _underscore.reject)(labels, function (label) {
               return !_this3.props.services.includes(label);
             });
             // pass if nothing was affected
@@ -33541,7 +33541,7 @@ var Issues = function (_React$Component) {
               continue;
             }
             // extract labels other than service names
-            var affectedStatuses = (0, _underscore.reject)(_labels, function (label) {
+            var affectedStatuses = (0, _underscore.reject)(labels, function (label) {
               return _this3.props.services.includes(label);
             });
             // leave only supported statuses
@@ -33668,7 +33668,7 @@ var Issues = function (_React$Component) {
               { className: 'issue-date' },
               (0, _moment2.default)(issue.created_at).from((0, _moment2.default)())
             )
-          ) || _this4.state.issues.length > 0 && labels.severity.length > 0 && _react2.default.createElement(
+          ) || _this4.state.issues.length > 0 && labelsSeverity.length > 0 && _react2.default.createElement(
             'div',
             {
               className: 'issue-badges d-flex flex-column w-100 justify-content-center align-items-center',
