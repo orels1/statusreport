@@ -6729,9 +6729,10 @@ body {
   font-weight: 400;
   font-size: 20px; }
   .info-spacer div {
-    margin-bottom: 50px; }
+    margin-bottom: 40px; }
 
 .main-block {
+  margin-top: 15px;
   min-height: 300px;
   padding: 30px;
   background: #F7F7F7; }
