@@ -1,0 +1,21 @@
+{
+  "name": "statusreport",
+  "authors": [
+    "orels <orel-s1@yandex.ru>"
+  ],
+  "description": "",
+  "main": "devserver.js",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}

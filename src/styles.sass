@@ -1,0 +1,240 @@
+@import '../bower_components/bootstrap/scss/bootstrap.scss'
+
+body
+  background-color: #F7F7F7
+
+*
+  font-family: 'Lato', sans-serif
+
+.container
+  padding: 0
+  box-shadow: 0 0 5px rgba(0,0,0,0.2)
+
+.current-status
+  padding: 50px 0 0 0
+  margin-bottom: -15px
+  animation: purpleGrad 25s ease infinite
+  background: linear-gradient(135deg, #8e44ad 0%,#3498db 100%)
+  background-size: 400% 400%
+
+@keyframes purpleGrad
+  0%
+    background-position: 0% 51%
+  50%
+    background-position: 100% 50%
+  100%
+    background-position: 0% 51%
+
+
+.status
+  padding: 15px 30px
+  margin: 30px
+  max-width: 500px
+  color: rgba(255,255,255,0.8)
+  font-size: 25px
+  font-weight: 400
+  border-radius: 100px
+  text-align: center
+
+.status.operational
+  color: #FCFCFC
+  background: linear-gradient(135deg, #28cc33 0%,#2ecc71 100%)
+  box-shadow: 0 0 30px #28cc33
+
+.operational
+  color: #2ecc71
+
+.degraded
+  color: #f39c12
+
+.outage
+  color: #e74c3c
+
+
+.visit-link
+
+  a
+    color: rgba(255,255,255,0.8)
+    text-transform: uppercase
+
+.services
+  position: relative
+  z-index: 10
+  top: 30px
+  padding: 20px
+  width: 80%
+  border-radius: 5px
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2)
+  background: #FCFCFC
+
+  .service
+    min-width: 150px
+    line-height: 30px
+    text-align: center
+    text-transform: uppercase
+
+    .service-name
+      color: rgba(0,0,0,0.6)
+      font-weight: 700
+
+    .service-status
+      font-size: 12px
+      line-height: 20px
+      text-transform: uppercase
+
+.announcement
+  background: #f39c12
+  line-height: 50px
+  font-weight: 24px
+  font-weight: 400
+  text-align: center
+  color: #FCFCFC
+
+.info-spacer
+  min-height: 140px
+  color: #fcfcfc
+  font-weight: 400
+  font-size: 20px
+
+  div
+    margin-bottom: 50px
+
+.main-block
+  min-height: 300px
+  padding: 30px
+  background: #F7F7F7
+
+  h2
+    font-size: 24px
+    margin: 0
+    padding: 0
+
+
+.last-updates
+
+.last-updates-inner
+
+  .commit-container
+    margin: 40px
+    background: #FFFFFF
+    @media (max-width: 768px)
+      flex-direction: column
+
+    .last-commit-title
+      max-width: 200px
+      max-height: 100%
+      background: #115bcc
+      color: #fff
+      font-size: 24px
+      font-weight: 900
+      text-transform: uppercase
+      text-align: center
+      border-radius: 5px 0 0 5px
+      @media (max-width: 768px)
+        border-radius: 5px 5px 0 0
+        padding: 15px 0
+        max-width: 100%
+
+      a
+        color: rgba(255,255,255,1)
+        text-decoration: none !important
+        transition: color 300ms ease
+
+        h2
+          font-weight: 900
+
+        &:hover
+          color: rgba(255,255,255,0.8)
+
+
+.commits-list
+
+  .commit
+    margin: 30px
+
+  .commit-info
+    color: rgba(0,0,0,0.4)
+
+  .commit-date
+
+  a
+
+    .commit-message
+      text-decoration: underline rgba(0,0,0,0)
+      transition: text-decoration 300ms ease
+
+  a:hover
+
+    .commit-message
+      text-decoration: underline rgba(0,0,0,0.4)
+
+  .commit:last-child
+
+    .commit-info
+
+
+.incidents
+
+  a
+    text-decoration: none !important
+
+    &:hover
+
+      .incidents-title
+        color: rgba(2, 117, 216, 0.8)
+
+  .incidents-title
+    font-weight: 900
+    font-size: 40px
+    color: rgba(2, 117, 216, 1)
+    transition: color 300ms ease
+
+.issues-list
+
+  .issue
+    margin: 40px
+    background: #FFFFFF
+    border-radius: 5px
+    margin-bottom: 15px
+    @media (max-width: 768px)
+      flex-direction: column
+
+    .issue-badges
+      max-width: 200px
+      max-height: 100%
+      background: #115bcc
+      color: #fff
+      font-size: 24px
+      font-weight: 900
+      text-transform: uppercase
+      text-align: center
+      border-radius: 5px 0 0 5px
+      @media (max-width: 768px)
+        border-radius: 5px 5px 0 0
+        max-width: 100%
+        padding: 15px 0
+
+      .issue-date
+        color: rgba(255,255, 255,0.8)
+        font-size: 12px
+        font-weight: 400
+
+      .issue-labels
+
+
+    .issue-info
+
+      .issue-inner
+        margin: 30px
+
+        .issue-message
+          border-bottom: none
+          font-weight: 300
+          line-height: 24px
+          margin-top: 10px
+
+        .issue-affected
+          color: rgba(0,0,0,0.6)
+
+.footer
+  margin-top: 40px
