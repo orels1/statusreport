@@ -1,4 +1,4 @@
-
+![statusreport](http://i.imgur.com/PiLxgO5.png)
 
 # StatusReport
 >A one-click deploy github-hosted statuspage
@@ -13,17 +13,29 @@ Issues are loaded [from here](https://github.com/orels1/status.cogs.red/issues?u
 StatusReport was built to be deployed by simply forking this repo, so the process is simple
 
 - Fork the repo
-- Edit config.json in the repo root
+- Edit config.json in the `static` folder, [guide here](config.md)
 - Edit meta tags inside index.html
 - Set Github to use master branch for github pages in repo settings
+- Add issue labels in your repo for each of the `statuses` and `services` from config.json + the extra `announcement` label for system-wide announcements
 
-And you're done!
+Source files contain demo values, so you will have a working page right from the beginning.
+
+And you're done! Everything will be updated automatically and cached by the client, without the need to rebuild or push anything.
+
+## Features
+ - [x] Client-sided updates
+ - [x] Responsive design
+ - [x] Deployment by forking the repo
+ - [x] System-wide announcements
 
 ## Customize
 
 Full list of config.json options and values can be [found here](config.md)
 
 If you want to dive deeper - clone the repo to your local system and edit the CSS directly (in the file or through the inspector) and commit changes.
+
+### Custom domain
+If you want your statuspage to be accessible through custom domain - create a file named `CNAME` in the root of your repo, with your custom domain in it. And then in your domain's DNS settings add a new record pointing at `yourname.github.io`, where `yourname` is your GitHub's profile name
 
 ## Support
 SatusReport is and will be absolutely free to use and re-distribute, however, if you like it and/or [my other projects](https://github.com/orels1) - consider signing up for a [small monthly donation on my patreon](https://patreon.com/orels1). It's a huge help!
