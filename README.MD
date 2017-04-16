@@ -16,7 +16,7 @@ StatusReport was built to be deployed by simply forking this repo, so the proces
 - Edit config.json in the `static` folder, [guide here](config.md)
 - Edit meta tags inside index.html
 - Set Github to use master branch for github pages in repo settings
-- Add issue labels in your repo for each of the `statuses` and `services` from config.json + the extra `announcement` label for system-wide announcements
+- Add issue labels in your repo for each of the `statuses` and `services` from config.json + the extra `announcement` label for system-wide announcements - [example here](https://github.com/orels1/status.cogs.red/issues?utf8=%E2%9C%93&q=is%3Aissue%20)
 
 Source files contain demo values, so you will have a working page right from the beginning.
 
