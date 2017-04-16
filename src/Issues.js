@@ -39,13 +39,7 @@ class Issues extends React.Component {
     // check if it's time to update
     if (!issuesUpdatedAt || moment().subtract(1, 'minutes').format('x') - parseInt(issuesUpdatedAt, 10) > 0) {
       // make an API call if it is
-      fetch(`https://api.github.com/repos/${statusRepo}/issues?state=all`,
-        {
-          headers: new Headers({
-            'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'Red-Portal-Status'
-          })
-        })
+      fetch(`https://api.github.com/repos/${statusRepo}/issues?state=all`)
         .then(response => response.json())
         .then(json => {
             // cache all the data in localStorage

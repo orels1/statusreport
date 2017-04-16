@@ -33119,12 +33119,7 @@ var Commits = function (_React$Component) {
       // check if it's time to update
       if (!commitsUpdatedAt || (0, _moment2.default)().subtract(5, 'minutes').format('x') - parseInt(commitsUpdatedAt, 10) > 0) {
         // make an API call if it is
-        fetch('https://api.github.com/repos/' + repo + '/commits', {
-          headers: new Headers({
-            'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'Red-Portal-Status'
-          })
-        }).then(function (response) {
+        fetch('https://api.github.com/repos/' + repo + '/commits').then(function (response) {
           return response.json();
         }).then(function (json) {
           // cache all the data in localStorage
@@ -33445,12 +33440,7 @@ var Issues = function (_React$Component) {
       // check if it's time to update
       if (!issuesUpdatedAt || (0, _moment2.default)().subtract(1, 'minutes').format('x') - parseInt(issuesUpdatedAt, 10) > 0) {
         // make an API call if it is
-        fetch('https://api.github.com/repos/' + statusRepo + '/issues?state=all', {
-          headers: new Headers({
-            'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'Red-Portal-Status'
-          })
-        }).then(function (response) {
+        fetch('https://api.github.com/repos/' + statusRepo + '/issues?state=all').then(function (response) {
           return response.json();
         }).then(function (json) {
           // cache all the data in localStorage

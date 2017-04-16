@@ -36,13 +36,7 @@ class Commits extends React.Component {
     // check if it's time to update
     if (!commitsUpdatedAt || moment().subtract(5, 'minutes').format('x') - parseInt(commitsUpdatedAt, 10) > 0) {
       // make an API call if it is
-      fetch(`https://api.github.com/repos/${repo}/commits`,
-        {
-          headers: new Headers({
-            'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'Red-Portal-Status'
-          })
-        })
+      fetch(`https://api.github.com/repos/${repo}/commits`)
         .then(response => response.json())
         .then(json => {
             // cache all the data in localStorage
