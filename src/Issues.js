@@ -138,7 +138,7 @@ class Issues extends React.Component {
       })
       return(
         <div key={`issue-${index}`} className="issue d-flex">
-          {this.props.services.length > 0 &&  this.checkResolved(issue) &&
+          {this.state.issues.length > 0 && this.props.services.length > 0 &&  this.checkResolved(issue) &&
             <div
               className="issue-badges d-flex flex-column w-100 justify-content-center align-items-center"
               style={{'background': '#2ecc71'}}
@@ -148,7 +148,7 @@ class Issues extends React.Component {
               </div>
               <div className="issue-date">{moment(issue.created_at).from(moment())}</div>
             </div>
-            ||
+            || this.state.issues.length > 0 &&
             <div
               className="issue-badges d-flex flex-column w-100 justify-content-center align-items-center"
               style={{'background': labelsSeverity[0].color}}
@@ -165,7 +165,9 @@ class Issues extends React.Component {
                 {issue.title}
               </div>
               <div className="issue-message"><ReactMarkdown source={issue.body} /></div>
-              <div className="issue-affected">Affected systems: {labelsServices.join(', ')}</div>
+              {labelsServices && labelsServices.length > 0 &&
+                <div className="issue-affected">Affected systems: {labelsServices.join(', ')}</div>
+              }
             </div>
           </div>
         </div>
@@ -182,7 +184,7 @@ class Issues extends React.Component {
             Incidents
           </h2>
         </a>
-        <div className="issues-list">{issues.length > 0 && issues || <i className="fa fa-cog fa-spin fa-3x fa-inverse"></i>}</div>
+        <div className="issues-list w-100">{issues.length > 0 && issues || <i className="fa fa-cog fa-spin fa-3x fa-inverse"></i>}</div>
       </div>
     )
   }

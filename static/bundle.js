@@ -33652,7 +33652,7 @@ var Issues = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           { key: 'issue-' + index, className: 'issue d-flex' },
-          _this4.props.services.length > 0 && _this4.checkResolved(issue) && _react2.default.createElement(
+          _this4.state.issues.length > 0 && _this4.props.services.length > 0 && _this4.checkResolved(issue) && _react2.default.createElement(
             'div',
             {
               className: 'issue-badges d-flex flex-column w-100 justify-content-center align-items-center',
@@ -33668,7 +33668,7 @@ var Issues = function (_React$Component) {
               { className: 'issue-date' },
               (0, _moment2.default)(issue.created_at).from((0, _moment2.default)())
             )
-          ) || _react2.default.createElement(
+          ) || _this4.state.issues.length > 0 && _react2.default.createElement(
             'div',
             {
               className: 'issue-badges d-flex flex-column w-100 justify-content-center align-items-center',
@@ -33701,7 +33701,7 @@ var Issues = function (_React$Component) {
                 { className: 'issue-message' },
                 _react2.default.createElement(_reactMarkdown2.default, { source: issue.body })
               ),
-              _react2.default.createElement(
+              labelsServices && labelsServices.length > 0 && _react2.default.createElement(
                 'div',
                 { className: 'issue-affected' },
                 'Affected systems: ',
@@ -33733,7 +33733,7 @@ var Issues = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'issues-list' },
+          { className: 'issues-list w-100' },
           issues.length > 0 && issues || _react2.default.createElement('i', { className: 'fa fa-cog fa-spin fa-3x fa-inverse' })
         )
       );
@@ -33950,7 +33950,7 @@ var Statuspage = function (_React$Component) {
           }),
           _react2.default.createElement(
             'div',
-            { className: 'main-block d-flex flex-column' },
+            { className: 'main-block w-100 d-flex flex-column' },
             _react2.default.createElement(_Commits2.default, { repo: this.state.repo, commits: this.state.commits }),
             _react2.default.createElement(_Issues2.default, {
               onParse: this.handleIssuesParse.bind(this),
