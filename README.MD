@@ -1,1 +1,82 @@
 # StatusReport
+>A one-click deploy github-hosted statuspage
+
+## Usage
+StatusReport was built to be deployed by simply forking this repo, so the process is simple
+
+- Fork the repo
+- Edit config.json in the repo root
+- Edit meta tags inside index.html
+- Set Github to use master branch for github pages in repo settings
+
+And you're done!
+
+## Customize
+
+Full list of config.json options and values can be [found here](config.md)
+
+If you want to dive deeper - clone the repo to your local system and edit the CSS directly (in the file or through the inspector) and commit changes.
+
+## Supoort
+SatusReport is and will be absolutely free to use and re-distribute, however, if you like it and/or [my other projects](https://github.com/orels1) - consider signing up for a [small monthly donation on my patreon](https://patreon.com/orels1). It's a huge help!
+
+## Develop
+
+If you need to go deeper &copy; – you can edit the source JS and Sass files.
+
+### Frameworks/libraries used
+- React
+- Sass
+- Fetch
+- Bootstrap v4
+- Underscore
+- React-Markdown
+- MomentJS
+- ExpressJS (for dev server)
+
+### Requirements
+- NodeJS
+- NPM
+- Sass
+- Bower
+
+>If you don't want to use nodejs server - you can fire up a python `devserver.py`, you'll need Flask installed for this to work, though.
+
+### Installation
+
+Get Bower, Browserify and Watchify (for on-the-fly updates)
+```
+npm install -g bower browserify watchify
+```
+
+Install package dependencies
+```
+npm install
+
+bower install
+```
+
+### Running
+Open terminal in the root repo directory
+
+Start watchify to automatically build your JS
+```
+watchify src/source.js -t [ babelify --presets [ es2015 react ] ] -o static/bundle.js -v
+```
+
+Then start Sass in watch mode
+```
+sass --watch src:static
+```
+
+At last - run one of the included servers
+
+For node
+```
+node devserver.js
+```
+
+For python
+```
+python devserver.py
+```

@@ -3,7 +3,7 @@
   "authors": [
     "orels <orel-s1@yandex.ru>"
   ],
-  "description": "",
+  "description": "A one-click deploy github-hosted statuspage",
   "main": "devserver.js",
   "license": "MIT",
   "homepage": "",

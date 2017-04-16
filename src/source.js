@@ -39,7 +39,7 @@ class Statuspage extends React.Component {
 
   componentDidMount() {
     // Load everything from config
-    fetch(`/static/config.json`)
+    fetch(`static/config.json`)
       .then(response => response.json())
       .then(json => {
         // get topmost status for future use

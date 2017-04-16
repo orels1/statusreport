@@ -33840,7 +33840,7 @@ var Statuspage = function (_React$Component) {
       var _this2 = this;
 
       // Load everything from config
-      fetch('/static/config.json').then(function (response) {
+      fetch('static/config.json').then(function (response) {
         return response.json();
       }).then(function (json) {
         // get topmost status for future use
