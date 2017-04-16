@@ -42,6 +42,8 @@ class Issues extends React.Component {
       fetch(`https://api.github.com/repos/${statusRepo}/issues?state=all`)
         .then(response => response.json())
         .then(json => {
+            // remove pull requests
+            json = filter(json, issue => !Object.keys(issue).includes('pull_request'));
             // cache all the data in localStorage
             localStorage.setItem('issuesUpdatedAt', moment().format('x'))
             localStorage.setItem('issues', JSON.stringify({'issues': json}))

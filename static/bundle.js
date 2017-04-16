@@ -33443,6 +33443,10 @@ var Issues = function (_React$Component) {
         fetch('https://api.github.com/repos/' + statusRepo + '/issues?state=all').then(function (response) {
           return response.json();
         }).then(function (json) {
+          // remove pull requests
+          json = (0, _underscore.filter)(json, function (issue) {
+            return !Object.keys(issue).includes('pull_request');
+          });
           // cache all the data in localStorage
           localStorage.setItem('issuesUpdatedAt', (0, _moment2.default)().format('x'));
           localStorage.setItem('issues', JSON.stringify({ 'issues': json }));
