@@ -3,6 +3,7 @@
   "name": "cogs.red",
   "link": "http://cogs.red",
   "repo": "orels1/Red-Portal",
+  "owner": "orels1",
   "statusRepo": "orels1/status.cogs.red",
   "services": ["API", "Website", "Parser"],
   "statuses": {
