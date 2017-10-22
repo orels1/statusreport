@@ -43,7 +43,12 @@ class Issues extends React.Component {
         .then(response => response.json())
         .then(json => {
             // remove pull requests
-            json = filter(json, issue => !Object.keys(issue).includes('pull_request'));
+            json = filter(json, (issue) => {
+              return (
+                !Object.keys(issue).includes('pull_request') &&
+                issue.user.login === this.props.owner
+              );
+            });
             // cache all the data in localStorage
             localStorage.setItem('issuesUpdatedAt', moment().format('x'))
             localStorage.setItem('issues', JSON.stringify({'issues': json}))

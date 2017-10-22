@@ -10,6 +10,7 @@ Field | Description
 `title`|Used in navbar, which is turned off by default
 `name`|Defines the text in the link to your website/api
 `link`|Link to your website/api/repo
+`owner`| Your username, to filter the issues
 `repo`|Repo to gather last commits from
 `statusRepo`|Repo for issue tracking (usually your fork's own repo)
 `services`|List of services to track

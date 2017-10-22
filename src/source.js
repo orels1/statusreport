@@ -20,6 +20,7 @@ class Statuspage extends React.Component {
       'name': '',
       'link': '',
       'repo': '',
+      'owner': '',
       'statusRepo': '',
       'status': {},
       'announcement': false,
@@ -116,6 +117,7 @@ class Statuspage extends React.Component {
               services={this.state.services}
               statusRepo={this.state.statusRepo}
               issues={this.state.issues}
+              owner={this.state.owner}
             />
             <Footer text={this.state.footer} />
           </div>
