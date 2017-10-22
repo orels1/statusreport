@@ -33596,12 +33596,21 @@ var Issues = function (_React$Component) {
         }).then(function (json) {
           // remove pull requests
           json = (0, _underscore.filter)(json, function (issue) {
-            return !Object.keys(issue).includes('pull_request') && issue.user.login === _this2.props.owner;
+            return !Object.keys(issue).includes('pull_request') &&
+            // filter by repo owner (set in config)
+            issue.user.login === _this2.props.owner;
           });
-          // cache all the data in localStorage
-          localStorage.setItem('issuesUpdatedAt', (0, _moment2.default)().format('x'));
-          localStorage.setItem('issues', JSON.stringify({ 'issues': json }));
           var payload = {};
+          // filter the issues without proper service labels (labels list set in config)
+          json = (0, _underscore.filter)(json, function (issue) {
+            return issue.labels.length > 0 && (0, _underscore.some)(issue.labels.map(function (l) {
+              return l.name;
+            }), function (label) {
+              return !!(0, _underscore.find)(_this2.props.services, function (service) {
+                return label === service || label === 'announcement';
+              });
+            });
+          });
           // check for announcements before saving
           Object.assign(payload, _this2.checkForAnnouncements(json));
           // affect services states from cache
@@ -33610,6 +33619,9 @@ var Issues = function (_React$Component) {
           _this2.props.onParse(payload);
           // Save that we've parsed everything
           _this2.setState(Object.assign({}, _this2.state, { issues: payload.issues, parsed: true }));
+          // cache all the data in localStorage
+          localStorage.setItem('issuesUpdatedAt', (0, _moment2.default)().format('x'));
+          localStorage.setItem('issues', JSON.stringify({ 'issues': json }));
         });
       } else {
         var payload = {};

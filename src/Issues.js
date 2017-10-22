@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import moment from 'moment';
-import { filter, isEqual, reject, map, findWhere } from 'underscore';
+import { filter, some, find, isEqual, reject, map, findWhere } from 'underscore';
 
 class Issues extends React.Component {
   constructor(props) {
@@ -46,13 +46,17 @@ class Issues extends React.Component {
             json = filter(json, (issue) => {
               return (
                 !Object.keys(issue).includes('pull_request') &&
+                // filter by repo owner (set in config)
                 issue.user.login === this.props.owner
               );
             });
-            // cache all the data in localStorage
-            localStorage.setItem('issuesUpdatedAt', moment().format('x'))
-            localStorage.setItem('issues', JSON.stringify({'issues': json}))
             let payload = {};
+            // filter the issues without proper service labels (labels list set in config)
+            json = filter(json, issue => (
+              issue.labels.length > 0 && some(issue.labels.map(l => l.name), label => (
+                !!find(this.props.services, service => label === service || label === 'announcement')
+              ))
+            ));
             // check for announcements before saving
             Object.assign(payload, this.checkForAnnouncements(json));
             // affect services states from cache
@@ -61,6 +65,9 @@ class Issues extends React.Component {
             this.props.onParse(payload);
             // Save that we've parsed everything
             this.setState(Object.assign({}, this.state, {issues: payload.issues, parsed: true}))
+            // cache all the data in localStorage
+            localStorage.setItem('issuesUpdatedAt', moment().format('x'))
+            localStorage.setItem('issues', JSON.stringify({'issues': json}))
         })
     } else {
       let payload = {};
