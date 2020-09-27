@@ -5,7 +5,7 @@
   "repo": "orels1/Red-Portal",
   "owner": "orels1",
   "statusRepo": "orels1/status.cogs.red",
-  "services": ["API", "Website", "Parser"],
+  "services": ["API", "Website", "Parser", "test"],
   "statuses": {
     "operational": "#2ecc71",
     "degraded": "#f39c12",
