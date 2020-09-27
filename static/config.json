@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "title": "Toxic Proxies Site Status",
   "name": "Toxic Servers",
   "link": "http://toxicservers.de",
@@ -39,6 +40,15 @@
     "Supreme", 
     "BSTN", 
     "Off White"],
+=======
+  "title": "Cogs.Red Status",
+  "name": "cogs.red",
+  "link": "http://cogs.red",
+  "repo": "orels1/Red-Portal",
+  "owner": "orels1",
+  "statusRepo": "orels1/status.cogs.red",
+  "services": ["API", "Website", "Parser", "test"],
+>>>>>>> 005f86bf88796d5818e5f3d907f8b65fe460c679
   "statuses": {
     "operational": "#2ecc71",
 	"Partial outage": "#f39c12",
